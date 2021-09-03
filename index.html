@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Webpack App</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <h1>My users random list</h1>
+  </body>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("service-worker.js")
+          .then((registration) => {
+            console.log("Service Worker registered: ", registration);
+          })
+          .catch((registrationError) => {
+            console.error(
+              "Service Worker registration failed: ",
+              registrationError
+            );
+          });
+      });
+    }
+  </script>
+</html>
